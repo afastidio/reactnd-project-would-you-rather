@@ -3,6 +3,14 @@ import logo from './logo.svg';
 import './App.css';
 import { connect } from 'react-redux';
 import { getInitialData } from './actions/shared';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Login from './components/Login';
+import Home from './components/Home';
+import Leaderboard from './components/Leaderboard';
+import NewQuestion from './components/NewQuestion';
+import NotFound from './components/NotFound';
+import Question from './components/Question';
+import NavigationBar from './components/NavigationBar';
 
 
 class App extends Component {
@@ -12,22 +20,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <BrowserRouter>        
+        <NavigationBar />
+        <Routes>
+          <Route path='/' element={<Login/>} />
+          <Route path='home' element={<Home/>} />
+          <Route path='leaderboard' element={<Leaderboard/>} />
+          <Route path='new-question' element={<NewQuestion/>} />
+          <Route path='question/:question_id' element={<Question/>} />
+          <Route path='*' element={<NotFound/>} />
+        </Routes>       
+      </BrowserRouter>
     );
   }
   
