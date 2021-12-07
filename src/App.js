@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { getInitialData } from './actions/shared';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Login from './components/Login';
+import PrivateRoute from './components/PrivateRoute';
 import Home from './components/Home';
 import Leaderboard from './components/Leaderboard';
 import NewQuestion from './components/NewQuestion';
@@ -20,20 +21,21 @@ class App extends Component {
 
   render() {
     return (
-      <BrowserRouter>        
-        <NavigationBar />
-        <Routes>
-          <Route path='/' element={<Login/>} />
-          <Route path='home' element={<Home/>} />
-          <Route path='leaderboard' element={<Leaderboard/>} />
-          <Route path='new-question' element={<NewQuestion/>} />
-          <Route path='question/:question_id' element={<Question/>} />
-          <Route path='*' element={<NotFound/>} />
-        </Routes>       
+      <BrowserRouter>
+          <NavigationBar />
+          <div className="p-6">
+            <Routes>
+              <Route path='/' element={<Login />} />
+              <Route path='home' element={<PrivateRoute component={Home}/>} />
+              <Route path='leaderboard' element={<PrivateRoute component={Leaderboard} />} />
+              <Route path='new-question' element={<PrivateRoute component={NewQuestion} />} />
+              <Route path='question/:question_id' element={<PrivateRoute component={Question} />} />
+              <Route path='*' element={<NotFound />} />
+            </Routes>
+          </div>
       </BrowserRouter>
     );
   }
-  
 }
 
 export default connect()(App);
