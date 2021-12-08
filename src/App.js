@@ -23,7 +23,7 @@ class App extends Component {
     return (
       <BrowserRouter>
           <NavigationBar />
-          <div className="p-6">
+          <div className="p-6 flex justify-center items-center">
             <Routes>
               <Route path='/' element={<Login />} />
               <Route path='home' element={<PrivateRoute component={Home}/>} />

@@ -5,7 +5,7 @@ import { FiLogOut } from 'react-icons/fi';
 import { setCurrentUser } from '../actions/currentUser';
 
 class NavigationBar extends Component {
-    logut = () => {
+    logout = () => {
         this.props.dispatch(setCurrentUser(null));
     }
 
