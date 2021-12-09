@@ -18,7 +18,7 @@ class NavigationBar extends Component {
                 <div className="flex justify-between w-1/3">    
                     <Link to="home">Home</Link>
                     <Link to="leaderboard">Leaderboard</Link>
-                    <Link to="new-question">Add New Question</Link>
+                    <Link to="new-question">New Question</Link>
                 </div>
                 <div className="flex flex-row items-center">
                     {currentUser &&

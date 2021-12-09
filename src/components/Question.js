@@ -40,11 +40,11 @@ const Question = () => {
         <>
             <div
                 className="rounded-full h-28 w-28 bg-black"
-            style={{
-                backgroundImage: `url('${authorAvatar}')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center center'
-            }}
+                style={{
+                    backgroundImage: `url('${authorAvatar}')`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center center'
+                }}
             >
             </div>
             <p className="uppercase text-gray-500 text-base my-2">{author} asks</p>

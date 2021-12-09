@@ -24,7 +24,7 @@ class App extends Component {
     return (
       <BrowserRouter>
           <NavigationBar />
-          <LoadingBar style={{ backgroundColor: "#2563EB"}}/>
+          <LoadingBar style={{ backgroundColor: "#3B82F6"}}/>
           <div className="p-6 flex flex-col justify-center items-center">
             <Routes>
               <Route path='/' element={<Login />} />
