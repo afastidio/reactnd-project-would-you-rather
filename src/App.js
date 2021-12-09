@@ -12,6 +12,7 @@ import NewQuestion from './components/NewQuestion';
 import NotFound from './components/NotFound';
 import Question from './components/Question';
 import NavigationBar from './components/NavigationBar';
+import LoadingBar from 'react-redux-loading'
 
 
 class App extends Component {
@@ -23,7 +24,8 @@ class App extends Component {
     return (
       <BrowserRouter>
           <NavigationBar />
-          <div className="p-6 flex justify-center items-center">
+          <LoadingBar style={{ backgroundColor: "#2563EB"}}/>
+          <div className="p-6 flex flex-col justify-center items-center">
             <Routes>
               <Route path='/' element={<Login />} />
               <Route path='home' element={<PrivateRoute component={Home}/>} />

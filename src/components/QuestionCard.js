@@ -9,12 +9,12 @@ class QuestionCard extends Component {
 
         return (
             <div
-                className="rounded-lg drop-shadow-lg my-4 p-4 w-full"
+                className="rounded-lg my-4 p-4 w-full"
                 style={{ boxShadow: "0 3px 10px #d3d3d3" }}
             >
                 <div className="flex flex-row">
                     <div
-                        className="flex rounded-full h-20 w-20 items-center justify-center mr-4"
+                        className="rounded-full h-20 w-20 mr-4"
                         style={{
                             backgroundImage: `url('${authorAvatar}')`,
                             backgroundSize: 'cover',
@@ -39,8 +39,8 @@ class QuestionCard extends Component {
 
 function mapStateToProps({ questions, users }, { id }) {
     const question = questions[id];
-    const authorId = question['author']
-    const author = users[authorId]
+    const authorId = question['author'];
+    const author = users[authorId];
     return ({
         author: author['name'],
         authorAvatar: author['avatarURL'],

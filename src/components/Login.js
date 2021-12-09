@@ -26,7 +26,7 @@ const Login = ({ users, dispatch }) => {
 
     return (
         <div
-            className="flex flex-col rounded-lg w-1/3 text-center items-center justify-center drop-shadow-lg"
+            className="flex flex-col rounded-lg w-1/3 text-center items-center justify-center"
             style={{ boxShadow: "0 3px 10px #d3d3d3" }}
         >
             <p className="mt-6 text-xl font-bold">Welcome!</p>
@@ -37,7 +37,7 @@ const Login = ({ users, dispatch }) => {
                         <p className="text-3xl font-bold text-gray-500">?</p>
                     </div> :
                     <div
-                        className="flex rounded-full h-20 w-20 items-center justify-center"
+                        className="rounded-full h-20 w-20"
                         style={{
                             backgroundImage: `url('${users[selectedUser]['avatarURL']}')`,
                             backgroundSize: 'cover',
