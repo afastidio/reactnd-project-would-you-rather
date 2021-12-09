@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import ProgressBar from "@ramonak/react-progress-bar";
 import { FaCheckCircle } from 'react-icons/fa';
 
-class AnsweredQuestionCard extends Component {
+class QuestionCardAnswered extends Component {
     render() {
         const { option, userVote, total } = this.props;
         const percent = Math.round((option['votes'].length / total) * 100);
@@ -32,4 +32,4 @@ class AnsweredQuestionCard extends Component {
     }
 }
 
-export default AnsweredQuestionCard;
+export default QuestionCardAnswered;

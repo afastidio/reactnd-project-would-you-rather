@@ -1,8 +1,8 @@
 import React from 'react';
 import { useParams } from "react-router-dom";
 import { useSelector } from 'react-redux'
-import AnsweredQuestionCard from './AnsweredQuestionCard';
-import UnansweredQuestionCard from './UnansweredQuestionCard';
+import QuestionCardAnswered from './QuestionCardAnswered';
+import QuestionCardUnanswered from './QuestionCardUnanswered';
 
 const Question = () => {
     const { question_id } = useParams();
@@ -30,9 +30,9 @@ const Question = () => {
 
     const showQuestionCard = (option, optionId) => {
         if(userVote) {
-           return <AnsweredQuestionCard option={option} userVote={userVote === optionId} total={totalVotes}/>
+           return <QuestionCardAnswered option={option} userVote={userVote === optionId} total={totalVotes}/>
         } else {
-            return <UnansweredQuestionCard questionId={question_id} optionText={option['text']} optionId={optionId}/>
+            return <QuestionCardUnanswered questionId={question_id} optionText={option['text']} optionId={optionId}/>
         }
     }
     

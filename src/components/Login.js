@@ -6,27 +6,24 @@ import { setCurrentUser } from '../actions/currentUser';
 
 const Login = ({ users, dispatch }) => {
     const [selectedUser, setSelectedUser] = useState(null);
-
     const navigate = useNavigate();
+    const options = Object.keys(users).map((id) => ({
+        value: id,
+        label: users[id]['name']
+    }))
 
     const handleDropdownChange = (event) => {
         setSelectedUser(event.value)
     }
 
     const handleSubmit = () => {
-        console.log("Submitting...");
         dispatch(setCurrentUser(selectedUser));
         navigate('home');
     }
 
-    const options = Object.keys(users).map((id) => ({
-        value: id,
-        label: users[id]['name']
-    }))
-
     return (
         <div
-            className="flex flex-col rounded-lg w-1/3 text-center items-center justify-center"
+            className="flex flex-col rounded-lg w-1/3 text-center items-center"
             style={{ boxShadow: "0 3px 10px #d3d3d3" }}
         >
             <p className="mt-6 text-xl font-bold">Welcome!</p>

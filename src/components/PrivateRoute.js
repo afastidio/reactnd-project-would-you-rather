@@ -15,7 +15,6 @@ class PrivateRoute extends Component {
             </>
         )
     }
-
 }
 
 function mapStateToProps({ currentUser }) {
