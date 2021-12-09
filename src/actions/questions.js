@@ -1,8 +1,9 @@
-import { _saveQuestionAnswer } from '../_DATA'
+import { _saveQuestionAnswer, _saveQuestion } from '../_DATA'
 import { showLoading, hideLoading } from 'react-redux-loading';
 
 export const RECEIVE_QUESTIONS = 'RECEIVE_QUESTIONS'
 export const SAVE_ANSWER = 'SAVE_ANSWER'
+export const SAVE_QUESTION = 'SAVE_QUESTION'
 
 export function receiveQuestions(questions) {
   return {
@@ -34,6 +35,34 @@ export function handleSaveAnswer(qid, answer) {
     return _saveQuestionAnswer(answerInfo)
       .then(() => {
         dispatch(saveAnswer(answerInfo))
+      })
+      .then(() => {
+        dispatch(hideLoading());
+      })
+  }
+}
+
+export function saveQuestion(question) {
+  return {
+    type: SAVE_QUESTION,
+    question
+  }
+}
+
+export function handleSaveQuestion(optionOneText, optionTwoText) {
+  return (dispatch, getState) => {
+    const { currentUser } = getState();
+    const questionInfo = {
+      author: currentUser,
+      optionOneText,
+      optionTwoText
+    }
+
+    dispatch(showLoading());
+
+    return _saveQuestion(questionInfo)
+      .then((formattedQuestion) => {
+        dispatch(saveQuestion(formattedQuestion))
       })
       .then(() => {
         dispatch(hideLoading());
