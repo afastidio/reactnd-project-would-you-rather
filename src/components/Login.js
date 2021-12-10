@@ -1,12 +1,17 @@
 import React, { useState } from 'react';
 import Select from 'react-select';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setCurrentUser } from '../actions/currentUser';
 
 const Login = ({ users, dispatch }) => {
     const [selectedUser, setSelectedUser] = useState(null);
+
     const navigate = useNavigate();
+    const location = useLocation();
+    const state = location.state;
+    const from = state ? state.from.pathname : '/home';
+
     const options = Object.keys(users).map((id) => ({
         value: id,
         label: users[id]['name']
@@ -18,7 +23,7 @@ const Login = ({ users, dispatch }) => {
 
     const handleSubmit = () => {
         dispatch(setCurrentUser(selectedUser));
-        navigate('home');
+        navigate(from, { replace: true });
     }
 
     return (
@@ -44,12 +49,14 @@ const Login = ({ users, dispatch }) => {
                     </div>
                 }
             </div>
+
             <Select
                 placeholder="Select a user..."
                 options={options}
                 value={options.find(user => user.value === selectedUser)}
                 onChange={handleDropdownChange}
                 className="w-1/2" />
+
             <button
                 className={`${selectedUser ? 'bg-blue-400' : 'bg-gray-300'} rounded text-white px-4 py-2 my-4`}
                 disabled={!selectedUser}

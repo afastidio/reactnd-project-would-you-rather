@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import { useSelector } from 'react-redux'
 import QuestionCardAnswered from './QuestionCardAnswered';
 import QuestionCardUnanswered from './QuestionCardUnanswered';
@@ -9,6 +9,9 @@ const Question = () => {
 
     const questionItem = useSelector(({ questions, users, currentUser }) => { 
         const question = questions[question_id];
+
+        if(!question) return null;
+
         const authorId = question['author'];
         const author = users[authorId];
         const answered = question['optionOne']['votes'].includes(currentUser) || question['optionTwo']['votes'].includes(currentUser);
@@ -25,6 +28,10 @@ const Question = () => {
             userVote
         }
     })
+
+    if(questionItem == null) {
+        return <Navigate to="/not-found"/>
+    }
 
     const { author, authorAvatar, optionOne, optionTwo, userVote, totalVotes} = questionItem; 
 

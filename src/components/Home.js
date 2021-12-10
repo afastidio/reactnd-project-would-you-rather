@@ -11,6 +11,7 @@ const Home = ({ dispatch, ...props }) => {
                 {
                     Object.keys(props).map(tab => (
                         <li
+                            key={tab}
                             className={`${selectedTab === tab ? 'bg-blue-400 text-white' : 'bg-white text-blue-400'} w-1/2 text-center rounded-lg capitalize cursor-pointer`}
                             onClick={() => setSelectedTab(tab)}
                         >

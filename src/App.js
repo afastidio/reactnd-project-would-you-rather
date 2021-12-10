@@ -32,6 +32,7 @@ class App extends Component {
               <Route path='leaderboard' element={<PrivateRoute component={Leaderboard} />} />
               <Route path='new-question' element={<PrivateRoute component={NewQuestion} />} />
               <Route path='question/:question_id' element={<PrivateRoute component={Question} />} />
+              <Route path='not-found' element={<NotFound />} />
               <Route path='*' element={<NotFound />} />
             </Routes>
           </div>

@@ -1,20 +1,18 @@
-import React, { Component } from 'react';
-import { Navigate } from 'react-router-dom';
+import React from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-class PrivateRoute extends Component {
-    render() {
-        const { loggedIn, component: RouteComponent} = this.props;
+const PrivateRoute = ({ loggedIn, component: RouteComponent }) => {
+    const location = useLocation();
 
-        return (
-            <>
-                {!loggedIn ? 
-                    <Navigate to="/" />
-                    : <RouteComponent />
-                }
-            </>
-        )
-    }
+    return (
+        <>
+            { !loggedIn ?
+                <Navigate to="/" state={{ from: location }} />
+                : <RouteComponent />
+            }
+        </>
+    )
 }
 
 function mapStateToProps({ currentUser }) {
