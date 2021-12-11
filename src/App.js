@@ -27,11 +27,11 @@ class App extends Component {
           <LoadingBar style={{ backgroundColor: "#3B82F6"}}/>
           <div className="p-6 flex flex-col justify-center items-center">
             <Routes>
-              <Route path='/' element={<Login />} />
-              <Route path='home' element={<PrivateRoute component={Home}/>} />
+              <Route path='/login' element={<Login />} />
+              <Route path='/' element={<PrivateRoute component={Home}/>} />
               <Route path='leaderboard' element={<PrivateRoute component={Leaderboard} />} />
-              <Route path='new-question' element={<PrivateRoute component={NewQuestion} />} />
-              <Route path='question/:question_id' element={<PrivateRoute component={Question} />} />
+              <Route path='add' element={<PrivateRoute component={NewQuestion} />} />
+              <Route path='questions/:question_id' element={<PrivateRoute component={Question} />} />
               <Route path='not-found' element={<NotFound />} />
               <Route path='*' element={<NotFound />} />
             </Routes>

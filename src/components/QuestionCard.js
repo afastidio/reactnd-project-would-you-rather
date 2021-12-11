@@ -30,7 +30,7 @@ class QuestionCard extends Component {
                 </div>
 
                 <div className="text-right">
-                    <Link to={`/question/${id}`} className="text-blue-400 text-sm">View complete question</Link>
+                    <Link to={`/questions/${id}`} className="text-blue-400 text-sm">View complete question</Link>
                 </div>
             </div>
         )

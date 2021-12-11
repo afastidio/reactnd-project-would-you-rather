@@ -16,9 +16,9 @@ class NavigationBar extends Component {
             <div className="flex justify-between items-center px-4 bg-blue-300 h-14 text-white">
                 <p className="font-bold text-xl">WOULD YOU RATHER?</p>
                 <div className="flex justify-between w-1/3">    
-                    <Link to="home">Home</Link>
+                    <Link to="/">Home</Link>
                     <Link to="leaderboard">Leaderboard</Link>
-                    <Link to="new-question">New Question</Link>
+                    <Link to="add">New Question</Link>
                 </div>
                 <div className="flex flex-row items-center">
                     {currentUser &&

@@ -8,7 +8,7 @@ const PrivateRoute = ({ loggedIn, component: RouteComponent }) => {
     return (
         <>
             { !loggedIn ?
-                <Navigate to="/" state={{ from: location }} />
+                <Navigate to="/login" state={{ from: location }} />
                 : <RouteComponent />
             }
         </>

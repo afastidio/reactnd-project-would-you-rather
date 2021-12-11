@@ -3,7 +3,7 @@ import Select from 'react-select';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setCurrentUser } from '../actions/currentUser';
-import { addUser, handleAddUser } from '../actions/users';
+import { handleAddUser } from '../actions/users';
 
 const Login = ({ users, dispatch }) => {
     const [selectedUser, setSelectedUser] = useState(null);
@@ -14,7 +14,7 @@ const Login = ({ users, dispatch }) => {
     const navigate = useNavigate();
     const location = useLocation();
     const state = location.state;
-    const from = state ? state.from.pathname : '/home';
+    const from = state ? state.from.pathname : '/';
 
     const options = Object.keys(users).map((id) => ({
         value: id,
