@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Select from 'react-select';  
+import Select from 'react-select';
 import { connect } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { setCurrentUser } from '../actions/currentUser';
@@ -35,10 +35,20 @@ const Login = ({ users, dispatch, setNewUserMode, from }) => {
                     <div className="icon-avatar h-20 w-20">
                         <p className="text-3xl font-bold text-gray-500">?</p>
                     </div> :
-                    <div
-                        className="url-avatar h-20 w-20"
-                        style={{ backgroundImage: `url('${users[selectedUser]['avatarURL']}')` }}
-                    >
+                    <div className="flex flex-col items-center">
+                        <div
+                            className="url-avatar h-20 w-20"
+                            style={{ backgroundImage: `url('${users[selectedUser]['avatarURL']}')` }}
+                        >
+                        </div>
+                        <p className="text-xs text-gray-500 italic mt-1">via
+                            <a 
+                                className="text-blue-400" 
+                                target="blank"
+                                href={users[selectedUser]['avatarURL']}> 
+                                &nbsp;Google Search Images
+                            </a>
+                        </p>
                     </div>
                 }
             </div>
