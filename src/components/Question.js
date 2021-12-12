@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams, Navigate } from "react-router-dom";
-import { useSelector } from 'react-redux'
+import { useSelector } from 'react-redux';
 import QuestionCardAnswered from './QuestionCardAnswered';
 import QuestionCardUnanswered from './QuestionCardUnanswered';
 
@@ -46,16 +46,12 @@ const Question = () => {
     return (
         <>
             <div
-                className="rounded-full h-28 w-28 bg-black"
-                style={{
-                    backgroundImage: `url('${authorAvatar}')`,
-                    backgroundSize: 'cover',
-                    backgroundPosition: 'center center'
-                }}
+                className="url-avatar h-28 w-28"
+                style={{ backgroundImage: `url('${authorAvatar}')` }}
             >
             </div>
-            <p className="uppercase text-gray-500 text-base my-2">{author} asks</p>
-            <p className="font-bold text-xl mb-6">Would you rather...</p>
+            <p className="small-heading">{author} asks</p>
+            <p className="main-heading">Would you rather...</p>
             
             {showQuestionCard(optionOne, 'optionOne')}
             

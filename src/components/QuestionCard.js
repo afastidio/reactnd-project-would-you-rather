@@ -14,12 +14,8 @@ class QuestionCard extends Component {
             >
                 <div className="flex flex-row">
                     <div
-                        className="rounded-full h-20 w-20 mr-4"
-                        style={{
-                            backgroundImage: `url('${authorAvatar}')`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center center'
-                        }}
+                        className="url-avatar h-20 w-20 mr-4"
+                        style={{ backgroundImage: `url('${authorAvatar}')` }}
                     >
                     </div>
                     <div>

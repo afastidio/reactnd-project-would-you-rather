@@ -18,12 +18,8 @@ class UserCard extends Component {
 
                 <div className="flex flex-row my-6 px-4">
                     <div
-                        className="rounded-full h-28 w-28 mr-8"
-                        style={{
-                            backgroundImage: `url('${avatar}')`,
-                            backgroundSize: 'cover',
-                            backgroundPosition: 'center center'
-                        }}
+                        className="url-avatar h-28 w-28 mr-8"
+                        style={{ backgroundImage: `url('${avatar}')` }}
                     ></div>
 
                     <div className="flex flex-row w-3/4">
@@ -37,7 +33,6 @@ class UserCard extends Component {
                             <div className="flex rounded-full h-14 w-14 bg-blue-400 items-center justify-center">
                                 <p className="font-bold text-white">{answered + asked}</p>
                             </div>
-
                         </div>
                     </div>
                 </div>

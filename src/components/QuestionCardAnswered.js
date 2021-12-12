@@ -9,8 +9,10 @@ class QuestionCardAnswered extends Component {
         const barColor = userVote ? "#3B82F6" : "#9CA3AF";
 
         return (
-            <div className={`flex flex-col items-center p-2 border ${userVote ? 'border-blue-400 ' : 'border-gray-300'} w-1/3 text-center my-2 rounded-lg`}
-                style={{ boxShadow: `0 0 5px 5px ${userVote ? '#60A5FA' : '#d3d3d3'}` }}>
+            <div
+                className={`flex flex-col items-center p-2 border ${userVote ? 'border-blue-400 ' : 'border-gray-300'} w-1/3 text-center my-2 rounded-lg`}
+                style={{ boxShadow: `0 0 5px 5px ${userVote ? '#60A5FA' : '#d3d3d3'}` }}
+            >
                 <div className="flex flex-row items-center justify-center mb-4">
                     <p className={userVote ? 'text-blue-400 font-bold' : ''}>
                         {option['text']}

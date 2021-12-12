@@ -9,10 +9,10 @@ class Leaderboard extends Component {
 
         return (
             <>
-                <div className="flex rounded-full h-8 w-8 bg-gray-300 items-center justify-center">
+                <div className="icon-avatar h-8 w-8">
                     <FaMedal className="text-lg font-bold text-gray-500" />
                 </div>
-                <p className="uppercase text-gray-500 text-base my-2">LEADERBOARD</p>
+                <p className="small-heading">LEADERBOARD</p>
                 <ul className="w-1/3">
                     {
                         Object.keys(users).map((id, index) => {
@@ -31,7 +31,6 @@ class Leaderboard extends Component {
                         })
                     }
                 </ul>
-
             </>
         )
     }

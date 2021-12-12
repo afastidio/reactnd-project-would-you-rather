@@ -24,7 +24,7 @@ class NavigationBar extends Component {
                     {currentUser &&
                         <>
                             <p className="italic mr-4">Welcome, {currentUser}!</p>
-                            <Link to="/" onClick={this.logout}>
+                            <Link to="/login" onClick={this.logout}>
                                 <FiLogOut/>
                             </Link>
                         </>
